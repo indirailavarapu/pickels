@@ -1,0 +1,46 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'sustain_pack.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+  </div>
+</header>
+
+<div id="plastic">
+    <img id="plastic1" src="../static/plastic.webp" alt="">
+    <h1>Plastics are a Problem</h1>
+    <p>very food-grade pack uses a thin<br> plastic film to protect it from moisture. <br>These plastics are invisible, they add up <br>fast and they can't be recycled.<br> We want to be better than that.</p>
+    <img id="paper1" src="../static/paper1.webp" alt="">
+</div>
+
+
+    <div id="sub2">
+        <h1 id="head2">Today, after a year of research, we’ve created an alternative..</h1>
+        <p id="para2">Our new Sustain packs are made with paper, aluminium and absolutely no plastic at all. <br>This makes them just as strong, while being a lot nicer for the planet. The packs are 100% recyclable, and sustainable going forward.</p>
+        <img id="img2" src="../static/pickelpacking.webp" alt="">
+    </div>
+
+
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'papads.js' %}"></script>
+{% endblock js %}

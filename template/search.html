@@ -1,0 +1,49 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'search.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:home' %}">home</a> 
+
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+  </div>
+</header>
+
+
+<div class="container">
+    <img src="{% static 'search.png' %}" alt="Search Icon" class="icon">
+    <div class="title">Search by Words</div>
+    <div class="description">
+        Begin typing the name of the product, or any word that you think is relevant to the product in the search field below.
+    </div>
+    <form method="GET" action="{% url 'myapp:search' %}">
+        {{ form.as_p }}
+        <br>
+        <button class="proceed-btn">
+             Proceed
+        </button>
+    </form>
+</div>
+
+
+
+
+
+<script src="search.js"></script>
+{% endblock body %}

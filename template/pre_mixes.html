@@ -1,0 +1,168 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'pre_mixes.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:home' %}">home</a> 
+
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+  </div>
+</header>
+
+<div id="transition">
+  <video id="vi1" src="{% static 'premix vedio.mp4' %}" autoplay loop muted></video>
+</div>
+
+
+
+<div class="pre_mixes-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    {% for pre_mixes in pre_mixess %}
+    <div class="pre_mixes-card" style="display: flex; width: 90%; max-width: 1200px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+        <div style="flex: 1;">
+            {% if pre_mixes.name == "Pulihora Mix" %}
+                <a href="{% url 'myapp:Pulihora' %}">
+            {% elif pre_mixes.name == "Adai Mix" %}
+                <a href="{% url 'myapp:Adai' %}">
+            {% elif pre_mixes.name == "Ragi Dosa Mix" %}
+                <a href="{% url 'myapp:Ragi' %}"> 
+            {% elif pre_mixes.name == "Palli Chutney Mix" %}
+                <a href="{% url 'myapp:Palli' %}">
+            {% elif pre_mixes.name == "Putnala Chutney Mix" %}
+                <a href="{% url 'myapp:Putnala' %}">  
+            {% endif %}
+                <img src="{{ pre_mixes.image.url }}" alt="{{ pre_mixes.name }}" style="width: 100%; height: auto; object-fit: cover;">
+            </a>
+        </div>
+
+        <div style="flex: 2; padding: 20px;">
+            <h2 style="margin: 0; font-size: 29px; color: #333; margin-top: 3%;">
+                {% if pre_mixes.name == "Pulihora Mix" %}
+                    <a href="{% url 'myapp:Pulihora' %}" style="text-decoration: none; color: #333;">{{ pre_mixes.name }}</a>
+                {% elif pre_mixes.name == "Adai Mix" %}
+                    <a href="{% url 'myapp:Adai' %}" style="text-decoration: none; color: #333;">{{ pre_mixes.name }}</a>
+                {% elif pre_mixes.name == "Ragi Dosa Mix" %}
+                    <a href="{% url 'myapp:Ragi' %}" style="text-decoration: none; color: #333;">{{ pre_mixes.name }}</a>
+                {% elif pre_mixes.name == "Palli Chutney Mix" %}
+                    <a href="{% url 'myapp:Palli' %}" style="text-decoration: none; color: #333;">{{ pre_mixes.name }}</a>
+                {% elif pre_mixes.name == "Putnala Chutney Mix" %}
+                    <a href="{% url 'myapp:Putnala' %}" style="text-decoration: none; color: #333;">{{ pre_mixes.name }}</a>
+                {% endif %}
+            </h2>
+            <p style="color: #777; font-size: 20px; margin-top: 3%;">{{ pre_mixes.description }}</p>
+
+            <div style="margin: 10px 0; display: flex; gap: 10px; margin-top: 3%;">
+                <button class="price-btn" onclick="selectPrice(this)" data-price="350" style="padding: 12px 20px; font-size: 16px; border: none; background: #e0e0e0; border-radius: 8px; cursor: pointer; font-weight: bold; min-width: 120px; text-align: center;">
+                    ₹350/500g
+                </button>
+                <button class="price-btn" onclick="selectPrice(this)" data-price="180" style="padding: 12px 20px; font-size: 16px; border: none; background: #e0e0e0; border-radius: 8px; cursor: pointer; font-weight: bold; min-width: 120px; text-align: center;">
+                    ₹180/250g
+                </button>
+                <button class="price-btn" onclick="selectPrice(this)" data-price="280" style="padding: 12px 20px; font-size: 16px; border: none; background: #008000; color: white; border-radius: 8px; cursor: pointer; font-weight: bold; min-width: 120px; text-align: center;">
+                    ₹280/250g
+                </button>
+            </div>
+            
+            <input type="hidden" id="selected-price" value="280"> 
+            
+            <script>
+                function selectPrice(selectedButton) {
+                    document.querySelectorAll(".price-btn").forEach(btn => {
+                        btn.style.background = "#e0e0e0"; 
+                        btn.style.color = "black"; 
+                    });
+            
+                    selectedButton.style.background = "#008000";
+                    selectedButton.style.color = "white";
+            
+                    document.getElementById("selected-price").value = selectedButton.getAttribute("data-price");
+                }
+            </script>
+            <div class="quantity-container" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; margin-top: 4%;">
+                <button class="quantity-btn" style="padding: 8px 12px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; border-radius: 5px;">-</button>
+                <input type="text" class="quantity-input" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                <button class="quantity-btn" style="padding: 8px 12px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; border-radius: 5px;">+</button>
+            </div>
+
+            <a href="{% url 'myapp:add_to_cart' pre_mixes.id %}">
+                <button class="add-to-cart-btn" style="width: 100%;margin-top: 4%; padding: 12px; background: #008000; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                    Add to Cart
+                </button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+  
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-column">
+            <h4>SM Foods</h4>
+            <p>SM Foods was established in 2025 with a motive to manufacture authentic South Indian pickles. All these wholesome products provide an enticing blend of taste, and are made from fresh, high-quality ingredients procured directly from the farmer. All our products are nourishing as well as tasty and 100% natural.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>SM India Foods LLP<br>
+                2-244, Street No.1, Guntur,<br>
+                Brodipet, Guntur, AndhraPradesh.</p>
+            <p>Email: <a href="mailto:support@SM.in">support@SMfoods.in</a></p>
+            <p>Phone: +91 77778899765<br>Hours: 9 AM to 6 PM (MON to SAT)</p>
+        </div>
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">All Products</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Return, Refund Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+    </div>
+    <div class="footer-bottom-row">
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h4>Subscribe</h4>
+            <form id="subscribe-form">
+                <input type="email" placeholder="Your email ID" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="subscribe-success">Thank You! Your subscription has been successful.</div>
+        </div>
+    </div>
+</footer>
+<div class="footer-bottom">
+    Conceptualised & Designed by SM
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'pre_mixes.js' %}"></script>
+
+{% endblock js %}
