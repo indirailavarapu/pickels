@@ -8,29 +8,23 @@ app_name = 'myapp'
 
 urlpatterns = [
     path('', home, name='home'),
-    path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
 
 
     path('pickles/', pickle_list, name='pickles'),  
-    path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
 
     path('powders/',powder_list, name='powders'),
-    path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
 
 
     path('papads/', papads_list, name='papads'),
-    path('add-to-cart/<int:papad_id>/', add_to_cart, name='add_to_cart'),
 
 
     path('pre-mixes/', pre_mixes_list, name='pre_mixes'), 
-    path('add-to-cart/<int:premix_id>/', add_to_cart, name='add_to_cart'),
 
 
     path('snacks/', snacks_list, name='snacks'),  
 
     path('search/', search, name='search'),
     path('join/',join, name='join'),
-     path('cart/', cart, name='cart'),
 
     
     path('Avakaya/', Avakaya, name='Avakaya'),

@@ -32,9 +32,7 @@ def pickle_list(request):
     pickles = Pickle.objects.all()
     return render(request, 'pickle.html', {'pickles': pickles})
 
-def add_to_cart(request, product_id):
-    pickle = get_object_or_404(Pickle, id=product_id)
-    return redirect('myapp:pickles')
+
 
 
 
@@ -42,9 +40,6 @@ def powder_list(request):
     powders = powder.objects.all() 
     return render(request, 'powders.html', {'powders': powders})  
 
-def add_to_cart(request, product_id):
-    product = get_object_or_404(powder, id=product_id)  
-    return redirect('myapp:powders')  
 
 
 def papads_list(request):
@@ -107,8 +102,7 @@ def search(request):
     return render(request, 'search.html', {'form': form, 'error': 'No matching product found. Please try again.'})
 
 
-def cart(request):
-    return render(request,'cart.html')
+
 
 def join(request):
     return render(request, 'join.html')

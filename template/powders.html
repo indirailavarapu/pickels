@@ -17,7 +17,6 @@
           <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
       </div>
       <div class="right-nav">
-          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
 
           <a class="anchors" href="{% url 'myapp:search' %}">search</a>
           <a class="anchors" href="{% url 'myapp:join' %}">join</a>
@@ -98,29 +97,117 @@
                 <button class="quantity-btn" style="padding: 8px 12px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; border-radius: 5px;">+</button>
             </div>
 
-            <a href="{% url 'myapp:add_to_cart' powder.id %}">
-                <button class="add-to-cart-btn" style="width: 100%;margin-top: 4%; padding: 12px; background: #008000; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                    Add to Cart
-                </button>
+            {% if powder.name == "Karivepaku Podi" %}
+            <a href="{% url 'myapp:Karivepaku' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                color: white; 
+                margin-top: 20px;
+                padding: 10px 40px;  /* Reduced vertical padding */
+                border: none; 
+                border-radius: 20px; 
+                cursor: pointer; 
+                font-size: 18px;  /* Slightly smaller font size */
+                font-weight: bold; 
+                text-transform: uppercase; 
+                letter-spacing: 1px; 
+                width: 300px; 
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;">
+            View Details
+               </button>
             </a>
-        </div>
-    </div>
-    {% endfor %}
+            {% endif %}
+
+            {% if powder.name == "Palli Podi" %}
+    <a href="{% url 'myapp:PalliPodi' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+    {% if powder.name == "Nuvvula Podi" %}
+    <a href="{% url 'myapp:Nuvvula' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+    {% if powder.name == "Kandi Podi" %}
+    <a href="{% url 'myapp:Kandi' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+    {% if powder.name == "Nallakaram Podi" %}
+    <a href="{% url 'myapp:Nallakaram' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+</div>
+</div>
+{% endfor %}
 </div>
   
-  
-  
-
-  
-
-
-  
-
-  
-  
-  
-
-  <footer class="footer">
+<footer class="footer">
     <!-- Top Row -->
     <div class="footer-top">
         <div class="footer-column">
@@ -173,12 +260,9 @@
 </div>
 
 
-
-
 {% endblock body %}
 
 {% block js %}
 <script src="{% static 'powders.js' %}"></script>
-<!-- <script src="{% static 'cart.js' %}"></script> -->
 
 {% endblock js %}

@@ -17,7 +17,6 @@
           <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
       </div>
       <div class="right-nav">
-          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
 
           <a class="anchors" href="{% url 'myapp:search' %}">search</a>
           <a class="anchors" href="{% url 'myapp:join' %}">join</a>
@@ -100,11 +99,115 @@
                 <button class="quantity-btn" style="padding: 8px 12px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; border-radius: 5px;">+</button>
             </div>
 
-            <a href="{% url 'myapp:add_to_cart' papads.id %}">
-                <button class="add-to-cart-btn" style="width: 100%;margin-top: 4%; padding: 12px; background: #008000; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                    Add to Cart
-                </button>
-            </a>
+            {% if papads.name == "Appadalu" %}
+    <a href="{% url 'myapp:Appadalu' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+    {% if papads.name == "Saggubiyyam Vadiyalu" %}
+    <a href="{% url 'myapp:Saggu' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+
+    {% if papads.name == "Gummadi Vadiyalu" %}
+    <a href="{% url 'myapp:Gummadi' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+
+    {% if papads.name == "Biyyam Pindi Vadiyalu" %}
+    <a href="{% url 'myapp:Biyyam' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+
+    {% if papads.name == "Challa Mirapakayalu" %}
+    <a href="{% url 'myapp:Challa' %}">
+        <button id="view" type="submit" 
+        style="background-color: #008000; 
+        color: white; 
+        padding: 10px 40px;  /* Reduced vertical padding */
+        border: none; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-size: 18px;  /* Slightly smaller font size */
+        font-weight: bold; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        width: 300px; 
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;">
+    View Details
+       </button>
+    </a>
+    {% endif %}
+
+
         </div>
     </div>
     {% endfor %}

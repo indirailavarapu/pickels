@@ -17,7 +17,6 @@
         <a class="anchors" href="{% url 'myapp:snacks' %}">Snacks</a>
       </div>
       <div class="right-nav">
-          <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
 
           <a class="anchors" href="{% url 'myapp:search' %}">Search</a>
           <a class="anchors" href="{% url 'myapp:join' %}">Join</a>
@@ -49,7 +48,7 @@
             </div>
     
             <div style="flex: 2; padding: 20px;">
-                <h2 style="margin: 0; font-size: 29px; color: #333; margin-top: 3%;">
+                <h2 style="margin: 0; font-size: 29px; color: #333; margin-top: 2%;">
                     {% if pickle.name == "Avakaya" %}
                         <a href="{% url 'myapp:Avakaya' %}" style="text-decoration: none; color: #333;">{{ pickle.name }}</a>
                     {% elif pickle.name == "Tomato Pachadi" %}
@@ -96,13 +95,112 @@
                     <input type="text" class="quantity-input" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                     <button class="quantity-btn" style="padding: 8px 12px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; border-radius: 5px;">+</button>
                 </div>
-    
-                <a href="{% url 'myapp:add_to_cart' pickle.id %}">
-                    <button class="add-to-cart-btn" style="width: 100%;margin-top: 4%; padding: 12px; background: #008000; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                        Add to Cart
-                    </button>
-                </a>
-            </div>
+            {% if pickle.name == "Avakaya" %}
+            <a href="{% url 'myapp:Avakaya' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                color: white; 
+                padding: 10px 40px;  /* Reduced vertical padding */
+                border: none; 
+                border-radius: 20px; 
+                cursor: pointer; 
+                font-size: 18px;  /* Slightly smaller font size */
+                font-weight: bold; 
+                text-transform: uppercase; 
+                letter-spacing: 1px; 
+                width: 300px; 
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;">
+            View Details
+               </button>
+            </a>
+            {% endif %}
+            
+            {% if pickle.name == "Tomato Pachadi" %}
+            <a href="{% url 'myapp:Tomato' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                color: white; 
+                padding: 10px 40px;  /* Reduced vertical padding */
+                border: none; 
+                border-radius: 20px; 
+                cursor: pointer; 
+                font-size: 18px;  /* Slightly smaller font size */
+                font-weight: bold; 
+                text-transform: uppercase; 
+                letter-spacing: 1px; 
+                width: 300px; 
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;">
+                View Details
+               </button>
+            </a>
+            {% endif %}
+            
+
+            {% if pickle.name == "Gongura" %}
+            <a href="{% url 'myapp:Gongura' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                       color: white; 
+                       padding: 10px 40px;  /* Reduced vertical padding */
+                       border: none; 
+                       border-radius: 20px; 
+                       cursor: pointer; 
+                       font-size: 18px;  /* Slightly smaller font size */
+                       font-weight: bold; 
+                       text-transform: uppercase; 
+                       letter-spacing: 1px; 
+                       width: 300px; 
+                       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                       transition: all 0.3s ease-in-out;">
+                View Details
+            </button>
+        </a>
+        {% endif %}
+
+        {% if pickle.name == "Magaya" %}
+            <a href="{% url 'myapp:Magaya' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                color: white; 
+                padding: 10px 40px;  /* Reduced vertical padding */
+                border: none; 
+                border-radius: 20px; 
+                cursor: pointer; 
+                font-size: 18px;  /* Slightly smaller font size */
+                font-weight: bold; 
+                text-transform: uppercase; 
+                letter-spacing: 1px; 
+                width: 300px; 
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;">
+                View Detail
+            </button>
+        </a>
+        {% endif %}
+            
+            {% if pickle.name == "Allam Pachadi" %}
+            <a href="{% url 'myapp:Allam' %}">
+                <button id="view" type="submit" 
+                style="background-color: #008000; 
+                       color: white; 
+                       padding: 10px 40px;  /* Reduced vertical padding */
+                       border: none; 
+                       border-radius: 20px; 
+                       cursor: pointer; 
+                       font-size: 18px;  /* Slightly smaller font size */
+                       font-weight: bold; 
+                       text-transform: uppercase; 
+                       letter-spacing: 1px; 
+                       width: 300px; 
+                       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+                       transition: all 0.3s ease-in-out;">
+                View Details
+            </button>
+        </a>
+        {% endif %}
+        </div>
         </div>
         {% endfor %}
     </div>

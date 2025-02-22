@@ -22,7 +22,6 @@
                 <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
             </div>
             <div class="right-nav">
-                <a class="anchors" href="{% url 'myapp:cart' %}">cart</a>
 
                 <a class="anchors" href="{% url 'myapp:search' %}">search</a>
                 <a class="anchors" href="{% url 'myapp:join' %}">join</a>
@@ -85,7 +84,7 @@
             {% elif product.name == "Gongura" %}
                 <a href="{% url 'myapp:Gongura' %}">
             {% endif %}
-
+    
                 <img src="{{ product.image.url }}" alt="{{ product.name }}">
             </a>
             <h2>
@@ -105,15 +104,88 @@
                 <button class="price-btn">₹{{ product.price_500g }}/500g</button>
                 <button class="price-btn">₹{{ product.price_250g }}/250g</button>
             </div>
-            <a href="{% url 'myapp:add_to_cart' product.id %}">
-                <button class="add-to-cart-btn">Add to Cart</button>
+    
+            {% if product.name == "Avakaya" %}
+            <a href="{% url 'myapp:Avakaya' %}">
+                <button id="view" type="submit" 
+                    style="background-color: #008000; 
+                           color: white;
+                           margin-top: 25px; 
+                           padding: 12px 20px; 
+                           border: none; 
+                           border-radius: 10px; 
+                           cursor: pointer; 
+                           font-size: 16px; 
+                           font-weight: bold; 
+                           text-transform: uppercase; 
+                           transition: background 0.3s;">
+                    View Details
+                </button>
             </a>
+            {% endif %}
+    
+            {% if product.name == "Tomato" %}
+            <a href="{% url 'myapp:Tomato' %}">
+                <button id="view" type="submit" 
+                    style="background-color: #008000; 
+                           color: white; 
+                           margin-top: 25px;
+                           padding: 12px 20px; 
+                           border: none; 
+                           border-radius: 10px; 
+                           cursor: pointer; 
+                           font-size: 16px; 
+                           font-weight: bold; 
+                           text-transform: uppercase; 
+                           transition: background 0.3s;">
+                    View Details
+                </button>
+            </a>
+            {% endif %}
+    
+            {% if product.name == "Magaya" %}
+            <a href="{% url 'myapp:Magaya' %}">
+                <button id="view" type="submit" 
+                    style="background-color: #008000; 
+                           color: white; 
+                           margin-top: 25px;
+                           padding: 12px 20px; 
+                           border: none; 
+                           border-radius: 10px; 
+                           cursor: pointer; 
+                           font-size: 16px; 
+                           font-weight: bold; 
+                           text-transform: uppercase; 
+                           transition: background 0.3s;">
+                    View Details
+                </button>
+            </a>
+            {% endif %}
+    
+            {% if product.name == "Gongura" %}
+            <a href="{% url 'myapp:Gongura' %}">
+                <button id="view" type="submit" 
+                    style="background-color: #008000; 
+                           color: white; 
+                           margin-top: 25px;
+                           margin-left: 20px;
+                           padding: 12px 20px; 
+                           border: none; 
+                           border-radius: 10px; 
+                           cursor: pointer; 
+                           font-size: 16px; 
+                           font-weight: bold; 
+                           text-transform: uppercase; 
+                           transition: background 0.3s;">
+                    View Details
+                </button>
+            </a>
+            {% endif %}
+    
         </div>
         {% endfor %}
     </div>
     
-    
-
     
 
 <div id="made">
