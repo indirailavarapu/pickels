@@ -1,0 +1,27 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'powders.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:home' %}">home</a> 
+
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+
+  </div>
+</header>
+{% endblock %}

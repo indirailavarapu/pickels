@@ -12,12 +12,6 @@ class Product(models.Model):
         return self.name
     
 
-
-
-
-
-from django.db import models
-
 class Pickle(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()

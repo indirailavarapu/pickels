@@ -1,0 +1,108 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'adai.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:home' %}">home</a> 
+
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+  </div>
+</header>
+
+
+<div id="back">
+    <img id="back_img" src="../static/tomato pickel.png" alt="">
+</div>
+
+<div id="burl">
+    <img id="burl1" src="../static/tamatopickel.png" alt="">
+    <div id="sub1">
+        <div id="v1">
+            <video id="a1" style="max-width: 800px; max-height: 800px;" src="../static/tomato1.mp4" autoplay loop muted></video> 
+        </div> 
+
+            <div id="text1">
+                <h1 id="textt"> Tomato Ingredients</h1>
+                <p>Tomato:Juicy, tangy, and vitamin-rich.
+                    Red Chilies:Spicy, vibrant, and heat-packed.
+                    Garlic:Aromatic, pungent, and enhances taste.
+                    Mustard Seeds:Adds crunch, aroma, and depth.
+                    Oil:Enhances flavor and preserves well.</p>
+            </div>
+    </div>
+    <div id="sub2">
+        <div id="v2">
+            <video id="a2" src="../static/tomatofinial.mp4" autoplay loop muted></video> 
+
+        </div>
+        <div id="text2">
+            <h1 id="textt2">Tomato pachadi.</h1>
+            <p>Tomato pachadi is a tangy, spicy, and flavorful Telugu-style chutney made with ripe tomatoes, spices, and garlic. It pairs well with rice, dosa, and idli and is a staple in South Indian cuisine.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-column">
+        <h4>SM Foods</h4>
+        <p>SM Foods was established in 2025 with a motive to manufacture authentic South Indian pickles. All these wholesome products provide an enticing blend of taste, and are made from fresh, high-quality ingredients procured directly from the farmer. All our products are nourishing as well as tasty and 100% natural.</p>
+    </div>
+    <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>SM India Foods LLP<br>
+           2-244, Street No.1, Guntur,<br>
+           Brodipet, Guntur, AndhraPradesh.</p>
+        <p>Email: <a href="mailto:support@SM.in">support@SMfoods.in</a></p>
+        <p>Phone: +91 77778899765<br>Hours: 9 AM to 6 PM (MON to SAT)</p>
+    </div>
+    <div class="footer-column">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">All Products</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return, Refund Policy</a>
+        <a href="#">Cookie Policy</a>
+    </div>
+    <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+        <div class="subscribe">
+            <h4>Subscribe</h4>
+            <form id="subscribe-form">
+                <input type="email" placeholder="Your email ID" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="subscribe-success">Thank You! Your subscription has been successful.</div>
+        </div>
+    </div>
+</footer>
+<div class="footer-bottom">
+    Conceptualised & Designed by SM
+</div>
+
+{% endblock body %}
+</body>
+</html>

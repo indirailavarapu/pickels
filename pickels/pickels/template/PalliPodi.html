@@ -1,0 +1,108 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'adai.css' %}">
+{% endblock css %}
+
+{% block body %}
+<header>
+  <div class="navbar">
+      <div class="left-nav">
+          <a class="anchors" href="{% url 'myapp:home' %}">home</a> 
+
+          <a class="anchors" href="{% url 'myapp:pickles' %}">pickels</a>
+          <a class="anchors" href="{% url 'myapp:powders' %}">powders</a>
+          <a class="anchors" href="{% url 'myapp:papads' %}">Papads</a>
+          <a class="anchors" href="{% url 'myapp:pre_mixes' %}">Pre-Mixes</a>
+          <a class="anchors" href="{% url 'myapp:snacks' %}">snacks</a>
+      </div>
+      <div class="right-nav">
+
+          <a class="anchors" href="{% url 'myapp:search' %}">search</a>
+          <a class="anchors" href="{% url 'myapp:join' %}">join</a>
+      </div>
+  </div>
+</header>
+
+
+<div id="back">
+    <img id="back_img" src="../static/palli .png" alt="">
+</div>
+
+<div id="burl">
+    <img id="burl1" src="../static/palli .png" alt="">
+    <div id="sub1">
+        <div id="v1">
+            <video id="a1" src="../static/palli1.mp4" autoplay loop muted></video> 
+        </div> 
+
+            <div id="text1">
+                <h1 id="textt2"> Palli Podi Ingredients.</h1>
+                 <p>Peanuts (Palli):1 cup (roasted and skin removed)
+                    Dried red chilies:5 to 6 (adjust spice level as needed)
+                    Garlic cloves:3 to 4 (optional, enhances flavor)
+                    Cumin seeds (Jeera):1 tsp
+                    Salt:as needed</p>
+            </div>
+    </div>
+    <div id="sub2">
+        <div id="v2">
+            <video id="a2" src="../static/palli2.mp4" autoplay loop muted;"></video> 
+
+        </div>
+        <div id="text2">
+            <h1 id="textt2" style="color:black">Palli Podi (Peanut Powder).</h1>
+            <p style="color:whitesmoke;">Palli Podi is a delicious and protein-rich Telugu -style spice powder made with roasted peanuts and aromatic spices. It has a nutty, slightly spicy, and savory taste, making it a perfect accompaniment to hot rice with ghee or as a side for idli and dosa. Peanuts are packed with protein, healthy fats, and essential nutrients, making this podi both tasty and nutritious.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-column">
+        <h4>SM Foods</h4>
+        <p>SM Foods was established in 2025 with a motive to manufacture authentic South Indian pickles. All these wholesome products provide an enticing blend of taste, and are made from fresh, high-quality ingredients procured directly from the farmer. All our products are nourishing as well as tasty and 100% natural.</p>
+    </div>
+    <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>SM India Foods LLP<br>
+           2-244, Street No.1, Guntur,<br>
+           Brodipet, Guntur, AndhraPradesh.</p>
+        <p>Email: <a href="mailto:support@SM.in">support@SMfoods.in</a></p>
+        <p>Phone: +91 77778899765<br>Hours: 9 AM to 6 PM (MON to SAT)</p>
+    </div>
+    <div class="footer-column">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">All Products</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return, Refund Policy</a>
+        <a href="#">Cookie Policy</a>
+    </div>
+    <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+        <div class="subscribe">
+            <h4>Subscribe</h4>
+            <form id="subscribe-form">
+                <input type="email" placeholder="Your email ID" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="subscribe-success">Thank You! Your subscription has been successful.</div>
+        </div>
+    </div>
+</footer>
+<div class="footer-bottom">
+    Conceptualised & Designed by SM
+</div>
+
+{% endblock body %}
+</body>
+</html>
