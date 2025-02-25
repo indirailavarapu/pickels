@@ -104,9 +104,6 @@
                 <button class="price-btn">₹{{ product.price_500g }}/500g</button>
                 <button class="price-btn">₹{{ product.price_250g }}/250g</button>
             </div>
-<<<<<<< HEAD
-            <a href="{% url 'myapp:Avakaya' %}" ><button type="submit">view details</button></a>
-=======
     
             {% if product.name == "Avakaya" %}
             <a href="{% url 'myapp:Avakaya' %}">
@@ -124,7 +121,6 @@
                            transition: background 0.3s;">
                     View Details
                 </button>
->>>>>>> 82b8e4504c21e803d3f1e45bd2737bf69c2528b6
             </a>
             {% endif %}
     
